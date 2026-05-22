@@ -1,0 +1,27 @@
+body {
+  background-color: lightpink;
+}
+
+h1 {
+  color: rgb(109, 0, 76);
+  margin-left: 20px;
+}
+
+a {
+  color: hotpink;
+  background-color: yellow;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div {
+    background-color: lavender;
+    width: 400px;
+    padding: 50px;
+    margin: 20px;
+}
+
+img {
+    padding: 50px;
+}
+
