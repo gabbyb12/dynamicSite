@@ -1,2 +1,10 @@
 test_sockets.php
 testmysql.php
+
+
+#ignore the macOs metadata file
+
+**/.DS_Store
+
+#ignore the inlcude folder
+include/
