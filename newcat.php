@@ -3,13 +3,14 @@
     echoHead('new cat');
     // TODO: get post id from the superglobal request 
     
-
     $mypostId = $_REQUEST["postId"];
 
     $posts = getPost($mypostId);
-    debugOutput($posts);
+    // debugOutput($posts);
 
+    $title = $posts["title"];
 
+    $content = $posts["content"];
 
     // $title = $post["title"];
     // $content = $post["content"];
@@ -23,7 +24,7 @@
         </style>
 
 <header>
-   <h2> $title </h2> 
+   <h2> ".$title." </h2> 
 </header>
 
 <nav>
@@ -53,43 +54,7 @@
 </body> ";
 
 
-?>  
-        <!-- <style>
-            div {
-                width: 20%;
-                display: inline-flexbox;
-                }
-        </style>
-
-<header>
-   <h2>Cute Stuff</h2> 
-</header>
-
-<nav>
-    <a href="index.php"> Home Page</a> |
-    <a href="newcat.php?postId=1"> new cat</a> |
-    <a href="newdog.php?postId=2"> new dog </a>
-</nav>
-<body>
-    <div style="background-color: lavender;">
-        <p> 1. Meow meow meow meow meow meow</p>
-    </div>
-    <div style="background-color: antiquewhite;">
-        <p> 2 </p>
-    </div>
-
-    <div style="background-color: lavender;">
-        <p>
-            3
-        </p>
-    </div>
-    <div style="background-color: antiquewhite;">
-            <p>
-                4
-            </p>
-    </div>
-  
-</body> -->
+?> 
 
 <?php
     echoFoot();

@@ -9,6 +9,10 @@
     $posts = getPost("postId");
     debugOutput($posts);
 
+    $title = $posts["title"];
+
+    $content = $posts["content"];
+
      echo "<style>
             div {
                 width: 20%;
