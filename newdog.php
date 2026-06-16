@@ -2,7 +2,7 @@
     include('include/init.php');
     echoHead('new dog');
 
-    $mypostId = $_REQUEST["postId"];
+    $mypostId = $_GET["postId"];
 
     $posts= getPost($mypostId);
     // debugOutput($posts);

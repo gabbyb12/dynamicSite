@@ -3,7 +3,7 @@
     echoHead('new cat');
     // TODO: get post id from the superglobal request 
     
-    $mypostId = $_REQUEST["postId"];
+    $mypostId = $_GET["postId"];
 
     $posts = getPost($mypostId);
     // debugOutput($posts);
@@ -47,7 +47,12 @@
     </div>
     <div style='background-color: antiquewhite;'>
             <p>
-                4
+                <form action=' ' method=post>
+                        <label> Comments Af </label>
+                        <input type='text' > </input>
+                        <input type='submit'> </input>
+
+                    </form>
             </p>
     </div>
   

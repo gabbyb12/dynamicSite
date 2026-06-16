@@ -1,13 +1,39 @@
 <?php
     include('include/init.php');
     echoHead('view post');
-    // TODO: get post id from the superglobal request 
+    // TODO: get post id from the superglobal request
+
+
+    $mypostId = $_GET["postId"];
+    debugOutput($_GET);
+
+    $posts = getPost($mypostId);
+    debugOutput($posts);
+
+    $comment = $_POST["comment"];
+
+    $comments = getComments($mypostId);
+    $userArr = [];
+
+    foreach($comments as $comment) {
+        $userId = $comment['userId'];
+        $userArr[]=$userId;
+    }   
+    
+    $userIdString = implode(",", $userArr);
+    $users = getUsersforCommentsOnPost($userIdString);
     
 
-    $mypostId = $_REQUEST["postId"];
+    foreach($comments as $comment) {
+        echo $comment['content'];
+    }
 
-    $posts = getPost("postId");
-    debugOutput($posts);
+    if(isset($_POST["comment"])) {
+        debugOutput($_POST);
+        saveComment($comment);
+	    header("Location: view_post.php?postId=".$_REQUEST['postId']."");
+        exit;
+    }
 
     $title = $posts["title"];
 
@@ -45,6 +71,11 @@
         <div style='background-color: antiquewhite;'>
                 <p>
                     4
+                    <form action=' ' method=post>
+                        <label> Comments Af </label>
+                        <input type='text' name='comment'> </input>
+                        <input type='submit'> </input>
+
                 </p>
         </div>
   
@@ -53,6 +84,6 @@
 
     echoFoot();
 
-    var_dump($posts);
+    // var_dump($posts);
 
     ?>
